@@ -9,9 +9,9 @@ The scheduler orchestrates tasks and manages the workers. It acts as the central
 
 To start the Dask scheduler, use the following command:
 
-\```bash
+```bash
 dask-scheduler
-\```
+```
 
 Upon execution, the scheduler will provide an address (e.g., `tcp://127.0.0.1:8786`). This is the address workers and clients will use to connect to the scheduler.
 
@@ -20,9 +20,9 @@ Workers handle the actual computations. You can run multiple workers across vari
 
 To start a Dask worker, use the following command, replacing the address with that of the scheduler:
 
-\```bash
+```bash
 dask-worker tcp://127.0.0.1:8786
-\```
+```
 
 You can execute the `dask-worker` command on multiple machines or multiple times on a single machine to initiate multiple workers.
 
@@ -30,12 +30,12 @@ You can execute the `dask-worker` command on multiple machines or multiple times
 
 Within your Python script, you'll need to connect to the scheduler:
 
-\```python
+```python
 from dask.distributed import Client
 
 # Connect to the Dask scheduler
 client = Client('tcp://127.0.0.1:8786')
-\```
+```
 
 Replace `tcp://127.0.0.1:8786` with the actual address of your scheduler. After establishing the connection, you can execute the previously discussed LP code, allowing Dask to utilize the scheduler and workers to distribute tasks.
 
